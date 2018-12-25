@@ -1,16 +1,16 @@
-from webcat.handlers import setup_handlers
+from Web-CAT-Jupyter-Plugin.handlers import setup_handlers
 # Jupyter Extension points
 def _jupyter_server_extension_paths():
     return [{
-        'module': 'webcat',
+        'module': 'Web-CAT-Jupyter-Plugin',
     }]
 
 def _jupyter_nbextension_paths():
     return [{
         "section": "notebook",
-        "dest": "webcat",
+        "dest": "Web-CAT-Jupyter-Plugin",
         "src": "static",
-        "require": "webcat/main"
+        "require": "Web-CAT-Jupyter-Plugin/main"
     }]
 
 def load_jupyter_server_extension(nbapp):
