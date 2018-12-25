@@ -18,15 +18,18 @@ class WebCatPushHandler(IPythonHandler):
         # obtain filename and msg for commit
         data = json.loads(self.request.body.decode('utf-8'))
         filename = urllib.parse.unquote(data['filename'])
+        course = urllib.parse.unquote(data['course'])
+        assignment = urllib.parse.unquote(data['a'])
+        institute = urllib.parse.unquote(data['d'])
 
         # get current directory (to return later)
         cwd = os.getcwd()
    
     
         payload = {
-            'course': "123",
-            'a': "Inst Assignment X",
-            'd': "VT"
+            'course': course,
+            'a': assignment,
+            'd': institute
             };
         url = 'https://web-cat.cs.vt.edu/Web-CAT/WebObjects/Web-CAT.woa/wa/submit'
 
