@@ -21,4 +21,12 @@ Enable the extension.
 
     jupyter nbextension enable webcatjupyterplugin/static/main
 
+# Assignment Indentification
 
+The Web-CAT assignment indetification parameters are fetched from the first cell. Paste the following comments in the first cell and change the values with your assignment parameters.
+
+    # Do not edit this cell
+
+    # course: 123
+    # a: Assignment 1
+    # d: VT
