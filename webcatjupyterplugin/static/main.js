@@ -25,7 +25,6 @@ define([
         };
         
         Jupyter.actions.register(action, submitActionName, prefix);
-        //Jupyter.toolbar.add_buttons_group([prefix+':'+submitActionName], submitActionName);
         Jupyter.toolbar.add_buttons_group([{
             'action': prefix+':'+submitActionName,
             'label': 'Submit to Web-CAT'
