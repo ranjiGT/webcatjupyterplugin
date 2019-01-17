@@ -9,7 +9,8 @@ setuptools.setup(
     description="Jupyter Notebook Plugin for submitting files to Web-CAT",
     packages=setuptools.find_packages(),
     install_requires=[
-        'notebook'
+        'notebook',
+        'bs4'
     ],
     package_data={'webcatjupyterplugin': ['static/*']},
 )
