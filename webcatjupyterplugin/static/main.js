@@ -18,8 +18,8 @@ define([
             .appendTo('head');
         
         var action = {
-            span : 'Submit to WebCat',
-            help    : 'Submit to WebCat',
+            span : 'Submit to Web-CAT',
+            help    : 'Submit to Web-CAT',
             help_index : 'zz',
             handler : webcat_request
         };
@@ -28,7 +28,7 @@ define([
         //Jupyter.toolbar.add_buttons_group([prefix+':'+submitActionName], submitActionName);
         Jupyter.toolbar.add_buttons_group([{
             'action': prefix+':'+submitActionName,
-            'label': 'Submit to Webcat'
+            'label': 'Submit to Web-CAT'
         }], submitActionName)
         
     }
@@ -56,15 +56,9 @@ define([
             data: JSON.stringify(payload),
             contentType: 'application/json',
             success: function(data) {
-                // console.log("Success Hamza");
-                // console.log(data.responseText);
-                // console.log(Jupyter.notebook.get_cell(0));
-                // console.log(Jupyter.notebook.get_cell(0).element[0].innerHTML);
-                // var iframe_html = '<iframe src="' +data.redirectLink+'" width = 650 height = 500></iframe>';
-                // Jupyter.notebook.insert_cell_at_bottom("code");
-                // Jupyter.notebook.get_cell(Jupyter.notebook.ncells()-1).element[0].innerHTML = iframe_html;
+                var iframe_html = '<iframe src="' +data.redirectLink+'" width = 650 height = 500></iframe>';
                 dialog.modal({
-                    title: "WebCat",
+                    title: "Web-CAT",
                     body: iframe_html,
                     sanitize: false,
                     buttons: {
