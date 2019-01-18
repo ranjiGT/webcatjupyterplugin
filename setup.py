@@ -10,7 +10,9 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     install_requires=[
         'notebook',
-        'bs4'
+        'bs4',
+        'gitpython',
+        'requests'
     ],
     package_data={'webcatjupyterplugin': ['static/*']},
 )
