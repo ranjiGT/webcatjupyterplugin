@@ -7,19 +7,17 @@ Make sure that nbextensions is installed on the server:
 
     pip3 install jupyter_contrib_nbextensions
 
-Download the extension.
+You can install this directly from git:
 
-    git clone https://github.com/hamzamanzoor/webcatjupyterplugin
+    pip3 install git+https://github.com/CSSPLICE/webcatjupyterplugin
+    jupyter serverextension enable --py webcatjupyterplugin
+    jupyter nbextension install --py webcatjupyterplugin
     
-Once downloaded, you can keep it in sync using regular Git tracking.
+To enable this extension for all notebooks:
 
-Install the extension
-
-    jupyter nbextension install ./webcatjupyterplugin/
+    jupyter nbextension enable --py webcatjupyterplugin
     
-Enable the extension.
-
-    jupyter nbextension enable webcatjupyterplugin/static/main
+Run the commands in env.sh file
 
 # Assignment Indentification
 
