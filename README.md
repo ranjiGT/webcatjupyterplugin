@@ -1,6 +1,11 @@
 # webcatjupyterplugin
 A Jupyter Notebook extension for submitting notebook files to Web-CAT.
 
+# Requirement:
+1. Python 3
+2. pip
+3. Jupyter Notebook
+
 # Directions
 
 Make sure that nbextensions is installed on the server:
