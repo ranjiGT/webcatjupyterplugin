@@ -38,11 +38,11 @@ If you have Windows operating system, follow these steps:
 7. jupyter nbextension enable --py webcatjupyterplugin
 8. jupyter notebook --generate-config
 
-This will generate a default config file and you will get the output like "Writing default config to: C:\Users\UserName\.jupyter\jupyter_notebook_config.py"
+This will generate a default config file and you will get the output like "Writing default config to: C:\Users\UserName\\.jupyter\jupyter_notebook_config.py"
 
 Run the following command but make sure to change the path to the ones returned by the above command
 
-9. echo c.NotebookApp.disable_check_xsrf = True >> C:\Users\UserName\.jupyter\jupyter_notebook_config.py
+9. echo c.NotebookApp.disable_check_xsrf = True >> C:\Users\UserName\\.jupyter\jupyter_notebook_config.py
 
 
 
