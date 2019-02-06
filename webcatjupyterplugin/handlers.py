@@ -1,4 +1,4 @@
-"""This file receives a request from the front-end Jupyter extension and pushes 
+"""This file receives a request from the front-end Jupyter extension and pushes
 the file to Web-CAT"""
 
 import os
