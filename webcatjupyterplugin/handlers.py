@@ -32,13 +32,11 @@ class WebCatPushHandler(IPythonHandler):
 
         # get current directory (to return later)
         cwd = os.getcwd()
-   
-    
         payload = {
             'course': course,
             'a': assignment,
             'd': institute
-            };
+            }
 
         url = 'https://web-cat.cs.vt.edu/Web-CAT/WebObjects/Web-CAT.woa/wa/submit'
 
@@ -60,9 +58,9 @@ class WebCatPushHandler(IPythonHandler):
         os.chdir(cwd)
 
         # close connection
-        self.write(json.dumps({'status': 200, 'statusText': cwd+"/"+filename, 
-            'responseText': response.content.decode("utf-8"), 
-            'redirectLink': redirect_link}))
+        self.write(json.dumps({'status': 200, 'statusText': cwd+"/"+filename,
+                               'responseText': response.content.decode("utf-8"),
+                               'redirectLink': redirect_link}))
 
 
 def setup_handlers(nbapp):
