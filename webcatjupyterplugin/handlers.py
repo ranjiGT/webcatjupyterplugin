@@ -11,7 +11,12 @@ from notebook.base.handlers import IPythonHandler
 from bs4 import BeautifulSoup
 
 
-class WebCatPushHandler(IPythonHandler):   
+class WebCatPushHandler(IPythonHandler):
+
+    @property
+    def notebook_dir(self):
+        return self.settings['notebook_dir']
+
     def error_and_return(self, dirname, reason):
 
         # send error
@@ -29,8 +34,6 @@ class WebCatPushHandler(IPythonHandler):
         assignment = urllib.parse.unquote(data['a'])
         institute = urllib.parse.unquote(data['d'])
 
-        # get current directory (to return later)
-        cwd = os.getcwd()
         payload = {
             'course': course,
             'a': assignment,
@@ -39,7 +42,7 @@ class WebCatPushHandler(IPythonHandler):
 
         url = 'https://web-cat.cs.vt.edu/Web-CAT/WebObjects/Web-CAT.woa/wa/submit'
 
-        filepath = cwd+"/"+filename
+        filepath = self.notebook_dir + filename
 
         files = {'file1': open(filepath, 'rb')}
         redirect_link = ""
@@ -50,18 +53,18 @@ class WebCatPushHandler(IPythonHandler):
                 redirect_link = link.get('href')
         except Exception as e:
             print(e)
-            self.error_and_return(cwd, "Could send request because: "+ str(e))
+            self.error_and_return(filepath, "Could send request because: "+ str(e))
             return
 
-        # return to directory
-        os.chdir(cwd)
-
         # close connection
-        self.write(json.dumps({'status': 200, 'statusText': cwd+"/"+filename,
+        self.write(json.dumps({'status': 200,
+                               'statusText': self.notebook_dir+"/"+filename,
                                'responseText': response.content.decode("utf-8"),
                                'redirectLink': redirect_link}))
 
 
 def setup_handlers(nbapp):
-    route_pattern = ujoin(nbapp.settings['base_url'], '/webcat/push')
-    nbapp.add_handlers('.*', [(route_pattern, WebCatPushHandler)])
+    webapp = nbapp.web_app
+    route_pattern = ujoin(webapp.settings['base_url'], '/webcat/push')
+    webapp.settings['notebook_dir'] = nbapp.notebook_dir
+    webapp.add_handlers('.*', [(route_pattern, WebCatPushHandler)])
