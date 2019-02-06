@@ -22,7 +22,14 @@ Follow these steps if you are running Jupyter Notebooks through Anaconda:
 7. Download the file env.sh or clone the repository and run the command below
 8. sh env.sh
 
+You can skip the 7<sup>th</sup> and 8<sup>th</sup> steps and manually run the following commands:
+1. jupyter notebook --generate-config
+2. Add the following line at the end of ~/.jupyter/jupyter_notebook_config.py
+    - c.NotebookApp.disable_check_xsrf = True 
+    
 ##### With pip:
+
+If you are not using Anaconda, use the following commands:
 
 1. pip3 install git+https://github.com/CSSPLICE/webcatjupyterplugin
 2. jupyter serverextension enable --py webcatjupyterplugin
@@ -31,6 +38,12 @@ Follow these steps if you are running Jupyter Notebooks through Anaconda:
 5. Download the file env.sh or clone the repository and run the command below
 6. sh env.sh
 
+
+You can skip the 5<sup>th</sup> and 6<sup>th</sup> steps and manually run the following commands:
+1. jupyter notebook --generate-config
+2. Add the following line at the end of ~/.jupyter/jupyter_notebook_config.py
+    - c.NotebookApp.disable_check_xsrf = True 
+    
 ## Windows
 
 If you have Windows operating system, follow these steps:
