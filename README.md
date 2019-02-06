@@ -9,9 +9,20 @@ A Jupyter Notebook extension for submitting notebook files to Web-CAT.
 
 # Directions
 
-Make sure that nbextensions is installed on the server:
+### Linux / macOS
 
-    pip3 install jupyter_contrib_nbextensions
+#### With Anaconda
+Follow these steps if you are running Jupyter Notebooks through Anaconda:
+
+1. conda install git pip
+2. pip install git+https://github.com/CSSPLICE/webcatjupyterplugin
+3. jupyter serverextension enable --py webcatjupyterplugin
+4. jupyter nbextension install --py webcatjupyterplugin
+5. jupyter nbextension enable --py webcatjupyterplugin
+7. Download the file env.sh or clone the repository and run the command below
+8. sh env.sh
+
+#### With pip
 
 You can install this directly from git:
 
@@ -25,7 +36,7 @@ To enable this extension for all notebooks:
     
 Run the commands in env.sh file
 
-# Windows
+### Windows
 
 If you have Windows operating system, follow these steps:
 
