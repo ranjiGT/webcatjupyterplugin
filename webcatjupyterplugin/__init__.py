@@ -14,4 +14,5 @@ def _jupyter_nbextension_paths():
     }]
 
 def load_jupyter_server_extension(nbapp):
-    setup_handlers(nbapp.web_app)
+    setup_handlers(nbapp)
+    

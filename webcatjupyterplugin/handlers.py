@@ -11,8 +11,7 @@ from notebook.base.handlers import IPythonHandler
 from bs4 import BeautifulSoup
 
 
-class WebCatPushHandler(IPythonHandler):
-
+class WebCatPushHandler(IPythonHandler):   
     def error_and_return(self, dirname, reason):
 
         # send error
