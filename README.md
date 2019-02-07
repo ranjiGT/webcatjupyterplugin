@@ -74,3 +74,17 @@ The Web-CAT assignment indetification parameters are fetched from the first cell
     # course: 123
     # a: Assignment 1
     # d: VT
+
+
+# Screenshots
+
+#### Submit to Web-CAT button
+!["Submit to Web-CAT button"](screens/submit_button.png "Submit to Web-CAT button")
+
+
+#### Web-CAT Assignment Parameters
+!["Web-CAT Assignment Parameters"](screens/assignment_parameters.png "Web-CAT Assignment Parameters")
+
+
+#### Assignment Submission
+!["Assignment Submission"](screens/submission.png "Assignment Submission")
