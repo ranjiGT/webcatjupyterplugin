@@ -34,6 +34,7 @@ define([
         function webcat_request() {
             var re = /^\/notebooks(.*?)$/;
             var filepath = window.location.pathname.match(re)[1];
+            Jupyter.menubar.notebook.save_notebook();
             try {
                 var cell = Jupyter.notebook.get_cell(0);
                 var text = cell.get_text();
