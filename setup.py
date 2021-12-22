@@ -10,6 +10,7 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     install_requires=[
         'notebook',
+        'jupyterhub',
         'bs4',
         'gitpython',
         'requests'
